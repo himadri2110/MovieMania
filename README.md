@@ -1,6 +1,9 @@
 # MovieMania
 
-MovieMania is a Movie app built using data from [TMDb API](https://developers.themoviedb.org/3/)
+MovieMania is a Movie App built using data from [TMDb API](https://developers.themoviedb.org/3/)
+
+## Live Site
+[MovieMania](https://themoviemania.netlify.app/)
 
 ## Features
 
@@ -23,6 +26,3 @@ MovieMania is a Movie app built using data from [TMDb API](https://developers.th
 
 - https://developers.themoviedb.org/3/
 - https://www.yogihosting.com/implement-tmdb-api-with-jquery-ajax/
-
-## Live Site
-[MovieMania](https://themoviemania.netlify.app/)
