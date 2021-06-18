@@ -1,0 +1,593 @@
+:root {
+    --cool-grey:  rgb(237, 242, 244);
+    --steel-blue: rgb(191, 215, 255);
+    --neon-blue:  rgb(84, 101, 255);
+    --box-shadow: 2px 2px 10px 2px rgba(201, 201, 201, 0.671);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kiwi Maru', serif;
+}
+
+body {
+    background-color: var(--cool-grey);
+    overflow: auto;
+}
+
+nav {
+    color: white;
+    background-color: var(--steel-blue);
+    border-bottom: 2px solid var(--neon-blue);
+    line-height: 13vh;
+    vertical-align: middle;
+}
+
+.nav {
+    font-size: 2.5rem;
+    padding: 0 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    border-radius: 10rem;
+    background-color: var(--neon-blue);
+    transition: all 0.7s ease;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+ul li a {
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    color: var(--neon-blue);
+    transition: all 0.5s ease;
+}
+
+ul li a:hover {
+    color: white;
+}
+
+.blue {
+    color: var(--neon-blue);
+}
+
+.jumbotron {
+    margin: 2rem;
+    text-align: center;
+}
+
+.search p, .browse h2, .watchSection h2 {
+    color: var(--neon-blue);
+    font-size: 1.75rem;
+    margin: 0.5rem;
+}
+
+form input, form button {
+    font-size: 1rem;
+    border: none;
+}
+
+form input {
+    width: 60%;
+    padding: 0.5rem 0.75rem;
+}
+
+form input:focus {
+    outline: none;
+    border: 1px solid var(--neon-blue);
+}
+
+form button {
+    padding: 0.5rem;
+    width: 10%;
+    background-color: var(--neon-blue);
+    color: white;
+    cursor: pointer;
+}
+
+.browse, .watchSection {
+    display: flex;
+    align-items:unset;
+    justify-content: space-between;
+    margin: 0 2rem;
+}
+
+.section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+.browseHR, .watchHR {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2.5rem;
+}
+
+.section select, .section option {
+    outline: none;
+    border: none;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+/* Display Movies */
+.result, .movieRecommendations, .trending, .showTrending, .watchlist {
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: unset;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.movie {
+    background-color: var(--steel-blue);
+    color: var(--neon-blue);
+    border: 1px solid var(--neon-blue);
+    margin: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+    width: min-content;
+    height: 100%;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.movie .image, .movieImage img {
+    display: block;
+    transition: transform 0.7s ease;
+    min-width: 320px;
+    max-width: 320px;
+    min-height: 450px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.movie .image:hover, .movieImage img:hover {
+    transform: scale(1.02);
+} 
+
+.movie button, .prevBtn, .nextBtn {
+    margin: 0.5rem 1rem;
+    padding: 0.25rem;  
+    font-size: 0.75rem;
+    background-color: var(--neon-blue);
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+button.detailsButton, .movie .title {
+    margin: 0.5rem;
+}
+
+.ratingFlex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0.5rem;  
+}
+
+.ratingFlex .title {
+    padding: 0;
+    margin: 0;
+}
+
+.rating {
+    background-color: var(--cool-grey);
+    border: 1px solid var(--neon-blue);
+    padding: 0.15rem 0.5rem;
+    margin: 0 0.5rem;
+}
+
+.pagination {
+    text-align: center;
+    margin: 0 auto;
+    color: var(--neon-blue);
+    font-weight: bold;
+}
+
+.prevBtn, .nextBtn {
+    margin: 0.5rem;
+    padding: 0.25rem 0.5rem;
+}
+
+/* DETAILS */
+.movieContainer {
+    margin: 1rem 2rem;
+}
+
+.movieTitle {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.movieTitle p {
+    color: var(--neon-blue);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.movieWrapper {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: var(--steel-blue);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--neon-blue);
+}
+
+.movieFlex {
+    display: flex;
+}
+
+.movieImage img {
+    min-width: 320px;
+    margin: 0.5rem;
+    vertical-align: middle;
+    box-shadow: var(--box-shadow);
+}
+
+.movieDetails, .moviePeople {
+    margin: 0 0.5rem 0.5rem 1rem;
+}
+
+.moviePlot {
+    margin: 0.5rem;
+    text-align: justify;
+}
+
+.movieDetails h2, .moviePlot h2, .moviePeople h2 {
+    color: var(--neon-blue);
+}
+
+.movieDetails p, .moviePlot p, .moviePeople p {
+    margin-top: 0.25rem;
+}
+
+.movieDetails > hr, .moviePlot > hr, .moviePeople > hr, .castHR, .recommHR, .reviewHR, .browseHR, .watchHR, .contentHR {
+    border-width: 0;
+    height: 0.01rem;
+    background-color: rgba(141, 153, 174, 0.726);
+}
+
+button.watched {
+    background-color: rgba(84, 101, 255, 0.4);
+    cursor: not-allowed;
+}
+
+/* Recommendations */
+
+.hideRecomm {
+    display: none;
+}
+
+.movieRecommendations, .movieReviews {
+    margin: 1rem 3rem 1rem;
+}
+
+.recommTitle, .reviewTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 3rem 0rem;
+    color: var(--neon-blue);
+}
+
+.recommHR, .reviewHR {
+    margin: 0 3rem;
+}
+
+.recommImage {
+    min-width: 185px;
+    min-height: 278px;
+    transition: transform 0.7s ease;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.movie .recommImage:hover {
+    transform: scale(1.05);
+} 
+
+/* REVIEWS */
+.reviews {
+    margin: 1rem 0;
+}
+
+.rrbuttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 3rem;
+}
+
+.reviewButton, .recommButton, .watchButton {
+    padding: 0.5rem;
+    background-color: var(--neon-blue);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+}
+
+.hideReview {
+    display: none;
+}
+
+.reviewDetails {
+    margin: 1rem 0;
+}
+
+.reviewFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviewDetails .content {
+    margin: 1rem;
+    text-align: justify;
+}
+
+.reviewDetails .author {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.reviewDetails .date {
+    font-size: 0.75rem;
+}
+
+/* Footer */
+html {
+    position: relative;
+}
+
+body {
+    min-height: 100vh;
+    padding-bottom: 5rem;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-top: 2px solid var(--neon-blue);
+    background-color: var(--steel-blue);
+    color: var(--neon-blue);
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    ul li a {
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    body.no-overflow {
+        overflow: hidden;
+    }
+    .nav {
+        font-size: 2rem;
+        line-height: 60px;
+        padding: 0rem 1.5rem;
+    }    
+    .nav-links {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        right: 0;
+        height: calc(100vh - 60px);
+        width: 100%;
+        top: 60px;
+        background-color: var(--steel-blue);
+        transform: translateX(100%);
+        transition: transform 0.7s ease;
+    }
+    .nav-links li {
+        margin-top: 1rem;
+    }
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+    .nav-links.active {
+        transform: translateX(0%);
+        overflow-y: hidden;
+        border-top: 2px solid var(--neon-blue);
+    }
+    .burger {
+        display: inline-block;
+        color: var(--neon-blue);
+        cursor: pointer;
+    }
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .search p, .browse h2, .watchSection h2 {
+        font-size: 1.25rem;
+    }
+    .browse, .watchSection {
+        margin: 0 1rem;
+    }
+    .browseHR, .watchHR {
+        margin: 0 1.5rem;
+    }
+    .section, .section select, .section option {
+        font-size: 0.8rem;
+    }
+    .section form {
+        margin-right: 0;
+        text-align: center;
+    }    
+    
+    .result, .movieRecommendations, .trending, .showTrending, .watchlist {
+        margin: 1rem;
+    }
+    .movie {
+        margin: 0.5rem;
+    }
+    .movie .image, .movieImage img {
+        min-width: 185px;
+        max-width: 185px;
+        min-height: 278px;
+        max-height: 278px;
+        font-size: 0.75rem;
+    }
+    .movie button, .prevBtn, .nextBtn {
+        margin: 0.25rem;
+        font-size: 0.65rem;
+    }
+    .ratingFlex {
+        margin: 0.5rem 0.25rem;  
+    }
+    .rating {
+        background-color: var(--cool-grey);
+        border: 1px solid var(--neon-blue);
+        margin: 0.15rem;
+        padding: 0.15rem;
+    }    
+    .ratingFlex h4 {
+        font-size: 0.9rem;
+    }
+
+    .movieContainer {
+        margin: 1rem;
+    }
+    .movieTitle {
+        margin: 0.5rem;
+    }
+    .movieTitle p {
+        font-size: 1.5rem;
+    }
+    .movieImage img {
+        display: block;
+        margin: auto;
+    }    
+    .movieFlex {
+        flex-direction: column;
+    }
+    .movieWrapper {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+    .movieDetails, .moviePeople {
+        margin: 0.5rem;
+    }    
+    .movieDetails h2, .moviePlot h2, .moviePeople h2, .recommTitle, .reviewTitle {
+        font-size: 1.25rem;
+    }
+    .movieDetails p, .moviePlot p, .moviePeople p {
+        padding: 0;
+        font-size: 0.85rem;
+    }
+    .rrbuttons {
+        margin: 1rem;
+    }
+    .reviewButton, .recommButton, .watchButton {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    .recommTitle, .reviewTitle {
+        margin: 1rem 1.5rem 0rem;
+    }
+    .recommHR, .reviewHR {
+        margin: 0 1.5rem;
+    }
+    .reviewButton, .recommButton {
+        margin: 0.5rem;
+    }    
+    .watchButton {
+        margin: 0.5rem 0;
+    }
+    .movieRecommendations, .movieReviews, .reviewFlex {
+        margin: 1rem;
+    }    
+    .reviewFlex {
+        flex-direction: column; 
+        align-items: flex-start;
+    }    
+    .reviewDetails .author {
+        font-size: 1rem;
+    }
+    .reviewDetails .content {
+        font-size: 0.85rem;
+    }
+    .jumbotron {
+        margin: 1rem;
+    }
+    form input {
+        width: 90%;
+        padding: 0.5rem 0.75rem;
+    }    
+}   
+
+@media (max-width: 480px){
+    .nav {
+        padding: 0 0.8rem;
+    }
+    .browse {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .section {
+        margin: 0.5rem;
+    }
+    .browse, .watchSection {
+        margin: 0 0.25rem;
+    }
+    .browseHR, .watchHR{
+        margin: 0 0.75rem;
+    }
+    .movieTitle, .rrbuttons {
+        flex-direction: column;
+    }
+    form input {
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+    }    
+
+}

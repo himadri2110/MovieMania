@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    
+    <title>TV Show Details</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav">
+            <div class="logo">
+                <a href="./index.html"><span class="blue">M</span>ovie<span class="blue">M</span>ania</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="./search.html" target="_blank" class="search-link">Search</a></li>
+
+                <li><a href="./watchlist.html" target="_blank" class="watchlist-link">Watchlist</a></li>
+            </ul>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="movieContainer">
+
+    </div>
+
+    <div class="rrbuttons">
+        <button class="reviewButton" onclick="showHideReview()">Show Reviews</button>
+        <button class="recommButton" onclick="showHideRecomm()">Show Recommendations</button>
+    </div>
+
+    <div class="recommendations hideRecomm">
+        <div class="recommTitle">Recommendations:</div>
+
+        <hr class="recommHR">
+    
+        <div class="movieRecommendations"></div>
+    </div>
+    
+    <div class="reviews hideReview">
+        <div class="reviewTitle">Reviews:</div>
+
+        <hr class="reviewHR">
+
+        <div class="movieReviews"></div>
+    </div>
+
+    <footer class="footer">
+        &lt;/&gt; by Himadri Shah
+    </footer>
+
+    <!-- jQuery minified CDN -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./main.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            getTVdetails();
+            getTVrecommendations();
+            getTVreviews();
+        });
+    </script>
+
+</body>
+</html>
