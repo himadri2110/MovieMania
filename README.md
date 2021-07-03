@@ -22,6 +22,12 @@ MovieMania is a Movie App built using data from [TMDb API](https://developers.th
 - jQuery
 - AJAX
 
+## Blog
+
+A blog on building Movie App using TMDb API
+
+[Blog](https://himadrishah.hashnode.dev/build-a-movie-app-using-themoviedb-api)
+
 ## Resources
 
 - https://developers.themoviedb.org/3/
