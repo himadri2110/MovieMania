@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 :root {
     --cool-grey:  rgb(237, 242, 244);
     --steel-blue: rgb(191, 215, 255);
@@ -9,7 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Kiwi Maru', serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 body {
